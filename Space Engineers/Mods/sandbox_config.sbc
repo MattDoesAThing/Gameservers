@@ -1,0 +1,169 @@
+<Mods>
+    <ModItem FriendlyName="WeaponCore - 2.5">
+      <Name>3154371364.sbm</Name>
+      <PublishedFileId>3154371364</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="ToolCore">
+      <Name>3040438530.sbm</Name>
+      <PublishedFileId>3040438530</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Text HUD API">
+      <Name>758597413.sbm</Name>
+      <PublishedFileId>758597413</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="SmartRotors: Solar">
+      <Name>1728457223.sbm</Name>
+      <PublishedFileId>1728457223</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Simple Laser Multitools (Now with Turrets)">
+      <Name>3175774286.sbm</Name>
+      <PublishedFileId>3175774286</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Shower Light">
+      <Name>2841920953.sbm</Name>
+      <PublishedFileId>2841920953</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="SG Vulcan SAMS">
+      <Name>2684202222.sbm</Name>
+      <PublishedFileId>2684202222</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Robot Raider Pods">
+      <Name>2598691307.sbm</Name>
+      <PublishedFileId>2598691307</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Perpetually Perturbed Pirates">
+      <Name>1992435623.sbm</Name>
+      <PublishedFileId>1992435623</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Parallax Concepts">
+      <Name>1135484957.sbm</Name>
+      <PublishedFileId>1135484957</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Nanobot Build and Repair System">
+      <Name>857053359.sbm</Name>
+      <PublishedFileId>857053359</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Modular Encounters Systems">
+      <Name>1521905890.sbm</Name>
+      <PublishedFileId>1521905890</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Life'Tech Transparent LCD Variants">
+      <Name>3292090990.sbm</Name>
+      <PublishedFileId>3292090990</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="In Depth LCDs">
+      <Name>2839553181.sbm</Name>
+      <PublishedFileId>2839553181</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Imber Corporation">
+      <Name>973526550.sbm</Name>
+      <PublishedFileId>973526550</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Humanoid's Beam Turret Multitool [toolcore]">
+      <Name>3225982257.sbm</Name>
+      <PublishedFileId>3225982257</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="HUD Compass">
+      <Name>1469072169.sbm</Name>
+      <PublishedFileId>1469072169</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Halo UNSC Ship Weapons (WeaponCore)">
+      <Name>2286546132.sbm</Name>
+      <PublishedFileId>2286546132</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Grapple Hook (In Development)">
+      <Name>3280424480.sbm</Name>
+      <PublishedFileId>3280424480</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Energy Shields">
+      <Name>484504816.sbm</Name>
+      <PublishedFileId>484504816</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Consolidation Rearmament">
+      <Name>3282527918.sbm</Name>
+      <PublishedFileId>3282527918</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Automated Beam Drill">
+      <Name>681276386.sbm</Name>
+      <PublishedFileId>681276386</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Assertive Loot">
+      <Name>2391318591.sbm</Name>
+      <PublishedFileId>2391318591</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Assertive Combat Systems Dependency">
+      <Name>3155707452.sbm</Name>
+      <PublishedFileId>3155707452</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Assertive Combat Systems">
+      <Name>1902970975.sbm</Name>
+      <PublishedFileId>1902970975</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Animation Engine">
+      <Name>2880317963.sbm</Name>
+      <PublishedFileId>2880317963</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Airlock Block">
+      <Name>643820962.sbm</Name>
+      <PublishedFileId>643820962</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="AiEnabled v1.8">
+      <Name>2596208372.sbm</Name>
+      <PublishedFileId>2596208372</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Advanced Power Systems 2">
+      <Name>2601590536.sbm</Name>
+      <PublishedFileId>2601590536</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="[Mexpex] MWI - Weapon Collection 1 [WeaponCore](21)">
+      <Name>1920388300.sbm</Name>
+      <PublishedFileId>1920388300</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Bot_spawner">
+      <Name>2336089504.sbm</Name>
+      <PublishedFileId>2336089504</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+      <IsDependency>true</IsDependency>
+    </ModItem>
+    <ModItem FriendlyName="Camera Panning - rotate camera view (+reset 1st person character view)">
+      <Name>806331071.sbm</Name>
+      <PublishedFileId>806331071</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+      <IsDependency>true</IsDependency>
+    </ModItem>
+    <ModItem FriendlyName="Midspace's Ship Speed 500 mod (skybox friendly)">
+      <Name>379815146.sbm</Name>
+      <PublishedFileId>379815146</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+  </Mods>
