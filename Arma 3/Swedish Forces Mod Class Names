@@ -1,0 +1,50 @@
+Heli
+sfp_hkp4_2015    //SFP chinook
+
+sfp_hkp9_sog    //SFP little bird-esc hile
+sfp_hkp16_ffv
+sfp_hkp16
+sfp_hkp16_medevac
+
+Armor
+sfp_strf90c	//APC
+sfp_patgb360	//Strker like
+sfp_grkpbv90120	//artillery
+sfp_strv122      //SFP Strv122 tank
+sfp_lvkv90c	//anti-air
+
+Drones
+sfp_uav01
+sfp_uav03
+
+
+Boats
+sfp_svavare2000_transport	//hovercraft transport open
+sfp_svavare2000	//hovercraft transport
+sfp_15_gruppbat
+sfp_strb90d
+
+MRAPs
+sfp_tgb1111_sog_ksp58
+sfp_tgb16
+sfp_tgb16_ksp58
+sfp_tgb16_rws
+sfp_tgb16_ksp58_mp
+
+Planes
+sfp_jas39_rb15
+sfp_jas39_bk90
+sfp_jas39_cap
+sfp_jas39
+sfp_s100b
+sfp_tp100
+sfp_tp84_2015
+
+Turrets
+sfp_grk84
+sfp_grsp
+sfp_ksp88
+sfp_rbs17
+sfp_rbs55
+sfp_rbs70
+sfp_rbs97
