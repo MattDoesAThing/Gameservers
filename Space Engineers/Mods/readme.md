@@ -9,4 +9,5 @@
       <PublishedFileId>3154371364</PublishedFileId>
       <PublishedServiceName>Steam</PublishedServiceName>
     </ModItem>
+</Mods>
 ```
