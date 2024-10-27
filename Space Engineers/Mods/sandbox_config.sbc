@@ -1,4 +1,4 @@
-<Mods>
+  <Mods>
     <ModItem FriendlyName="WeaponCore - 2.5">
       <Name>3154371364.sbm</Name>
       <PublishedFileId>3154371364</PublishedFileId>
@@ -164,6 +164,31 @@
     <ModItem FriendlyName="Midspace's Ship Speed 500 mod (skybox friendly)">
       <Name>379815146.sbm</Name>
       <PublishedFileId>379815146</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="KOLT Command Consoles Revamped">
+      <Name>2936367770.sbm</Name>
+      <PublishedFileId>2936367770</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Fully Retractable Landing Gear">
+      <Name>2998206747.sbm</Name>
+      <PublishedFileId>2998206747</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Starwars Hangar Fields">
+      <Name>1506924858.sbm</Name>
+      <PublishedFileId>1506924858</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="Forcefield Generators (Hangar Doors)">
+      <Name>2604451892.sbm</Name>
+      <PublishedFileId>2604451892</PublishedFileId>
+      <PublishedServiceName>Steam</PublishedServiceName>
+    </ModItem>
+    <ModItem FriendlyName="(DX11) Kolt - Command Console Pack">
+      <Name>436025957.sbm</Name>
+      <PublishedFileId>436025957</PublishedFileId>
       <PublishedServiceName>Steam</PublishedServiceName>
     </ModItem>
   </Mods>
