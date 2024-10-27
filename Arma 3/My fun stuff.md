@@ -1,0 +1,363 @@
+A-29 RHSGREF_A29B_HIDF
+JS_JC_FA18E
+DEGA_ArmoredSUV_PMC
+DEGA_GunArmoredSUV_PMC
+fza_ah64d_b2e - AH-64
+DEGA_V22_IDWS_B_NATO - armed osprey
+DEGA_V22_Infantry_B_NATO
+DEGA_V22_Vehicle_B_NATO
+FIR_F18C_Hellcat_USN_Enterprise
+RHS_M2A3_BUSKIII
+RHS_MELB_AH6M
+vtx_UH60M
+
+\\KP spawn supplies
+Crate with 100 supplies spawns at player position.
+[] call KPLIB_fnc_createCrate;
+
+Crate with 100 ammo spawns at player position.
+[KP_liberation_ammo_crate] call KPLIB_fnc_createCrate;
+
+// Crate with 100 fuel spawns at player position.
+[KP_liberation_fuel_crate] call KPLIB_fnc_createCrate;
+
+\\Change time and set weather
+skipTime 4; 
+0 setFog 0; forceWeatherChange; 999999 setFog 0;
+
+//Change reputation with civilians +amount
+
+[amount] spawn F_cr_changeCR;
+
+\\Fun commands
+\\God mode \\ 
+player allowdamage false;
+
+\\Heal player
+player setDamage 0;
+
+\\Disable stamins - need to do gloab exec
+player enableFatigue false;
+
+\\Repair vic \\ 
+_timeForRepair = 0; _vehicle = vehicle player; hint format ["Please wait %1 seconds for repair/flip",_timeForRepair]; sleep _timeForRepair; if (_vehicle == player) then {_vehicle = cursorTarget;}; _vehicle setfuel 1; _vehicle setdamage 0; _vehicle = nil; vehicle = this select 0; _vehicle setvectorup [0,0,1]; setVehicleAmmo 1;
+
+_timeForRepair = 0; _vehicle = vehicle player; hint format ["Please wait %1 seconds for repair/flip",_timeForRepair]; sleep _timeForRepair; if (_vehicle == player) then {_vehicle = cursorTarget;}; _vehicle setfuel 1; _vehicle setdamage 0; _vehicle = nil; vehicle = this select 0; _vehicle setvectorup [0,0,1]
+\\rearm weapon
+MortarName setVehicleAmmo 1;
+
+
+RHS_M252_D setVehicleAmmo 1;
+
+\\Create pack of dogs
+_dog = createAgent ["Fin_random_F", getPos player, [], 5, "CAN_COLLIDE"];
+
+\\Delete Object you look at
+deleteVehicle cursorTarget;
+
+\\Teleport yourself
+// This will teleport you around the map freely by alt then left clicking.
+player onMapSingleClick "if (_alt) then {player setPosATL _pos}";
+
+\\Teleport people into air to fall to death
+_pos = getPosATL player; _pos set [2, 700]; player setPosATL _pos; player spawn bis_fnc_halo;
+
+vehicle player allowDamage false 
+
+//Bradley
+_vic = "RHS_M2A3_BUSKIII" createVehicle(position player); 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic allowDamage false;
+_vic addWeaponTurret ["rockets_230mm_GAT", [0]]; 
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [0]];
+_vic addMagazineTurret ["12Rnd_120mm_HEAT_MP", [0]];
+_vic addWeaponTurret ["cannon_120mm_long", [0]];
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F",[0]];
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F",[0]];
+_vic addWeaponTurret ["Twin_Cannon_20mm",[0]];
+_vic addMagazineTurret ["2000Rnd_20mm_shells",[0]];
+_vic addWeaponTurret ["rockets_230mm_GAT", [1]]; 
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [1]];
+_vic addMagazineTurret ["12Rnd_120mm_HEAT_MP", [1]];
+_vic addWeaponTurret ["cannon_120mm_long", [1]];
+_vic addWeaponTurret ["Twin_Cannon_20mm",[1]];
+_vic addMagazineTurret ["2000Rnd_20mm_shells",[1]];
+
+
+//Rooster Head
+ _expl1 = "Cock_random_F" createVehicle position player; _expl1 attachTo [player, [-0.1, 0.1, 0.15], "Head"]; _expl1 setVectorDirAndUp [ [0.5, 0.5, 0], [-0.5, 0.5, 0] ]; 
+
+
+\\Make arsenal
+["AmmoboxInit", [cursorObject, true]] spawn BIS_fnc_arsenal;
+
+\\FA-18 
+FIR_F14D
+JS_JC_FA18E
+_vic = "JS_JC_FA18E" createVehicle(position player); 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}]; 
+_vic allowDamage false;
+_vic addEventHandler ["Fuel", { 
+ params ["_vehicle", "_hasFuel"]; 
+    if (!_hasFuel) then {_vehicle setfuel 1}; 
+}];
+
+
+_vic = "USAF_A10" createVehicle(position player); 
+_vic2 = "USAF_C17" createVehicle(position player); 
+_vic2 attachTo [_vic, [0, 0, 10]]; 
+_vic2 setDir 180;
+
+
+_vic = "USAF_C17" createVehicle(position player); 
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F", [0]];
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F", [0]];
+_vic addWeaponTurret ["MK82BombLauncher", [0]];
+_vic addMagazineTurret ["2Rnd_MK82", [0]];
+_vic setVehicleAmmo 1;
+
+_vic setVehicleAmmo 1;
+
+
+DELETEVEHICLE CURSORTARGET
+
+player removeeventhandler["fired", FEH_missile]; FEH_missile = player addeventhandler ["fired", { _bullet = nearestObject [_this select 0,_this select 4]; _bulletpos = getPosASL _bullet; _o = "12Rnd_230mm_rockets" createVehicle _bulletpos; _weapdir = player weaponDirection currentWeapon player; _dist = 11; _o setPosASL []; _up = vectorUp _bullet; _o setVectorDirAndUp[_weapdir,_up]; _o setVelocity velocity _bullet; }];
+
+
+_vic = "DEGA_V22_IDWS_B_NATO" createVehicle(position player);  
+_vic2 = "Gatling_30mm_Plane_CAS_01_F" createVehicle(position player); _vic2 attachTo [_vic, [0, 0, 0]];
+
+_vic = "rhsusf_M977A4_REPAIR_BKIT_usarmy_d" createVehicle(position player);  
+
+_vic = "USAF_C17" createVehicle(position player);
+_vic addMagazineTurret ["12Rnd_120mm_HEAT_MP", [-1]];
+_vic addWeaponTurret ["cannon_120mm_long", [-1]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["Cannon_30mm_Plane_CAS_02_F", [-1]];
+_vic addMagazineTurret ["500Rnd_Cannon_30mm_Plane_CAS_02_F", [-1]];
+_vic addWeaponTurret ["autocannon_35mm", [0]];
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [0]];
+
+
+_vic = "USAF_C17" createVehicle(position player);
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [-1]];
+_vic addWeaponTurret ["autocannon_35mm", [-1]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["Cannon_30mm_Plane_CAS_02_F", [-1]];
+_vic addMagazineTurret ["500Rnd_Cannon_30mm_Plane_CAS_02_F", [-1]];
+
+
+_vic = "USAF_C17" createVehicle(position player);
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [-1]];
+_vic addWeaponTurret ["autocannon_35mm", [-1]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+
+
+player removeeventhandler["fired", FEH_missile];
+FEH_missile = player addeventhandler ["fired", {
+  _bullet = nearestObject [_this select 0,_this select 4];
+  _bulletpos = getPosASL _bullet;
+  _o = "Bo_GBU12_LGB" createVehicle _bulletpos;
+  _weapdir = player weaponDirection currentWeapon player;
+  _dist = 11;
+  _o setPosASL [
+    (_bulletpos select 0) + (_weapdir select 0)*_dist,
+    (_bulletpos select 1) + (_weapdir select 1)*_dist,
+    (_bulletpos select 2) + (_weapdir select 2)*_dist
+  ];
+  _up = vectorUp _bullet;
+  _o setVectorDirAndUp[_weapdir,_up];
+  _o setVelocity velocity _bullet;
+}];
+
+
+_vic = "USAF_C130J" createVehicle(position player);
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [-1]];
+_vic addWeaponTurret ["autocannon_35mm", [-1]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+
+
+_vic = "USAF_C130J" createVehicle(position player); 
+_vic2 = "Submarine_0m1_F" createVehicle(position player);
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [-1]];
+_vic addWeaponTurret ["autocannon_35mm", [-1]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+_vic addMagazineTurret ["12Rnd_120mm_HEAT_MP", [-1]];
+_vic addWeaponTurret ["cannon_120mm_long", [-1]];
+_vic addWeaponTurret ["MK82BombLauncher", [-1]];
+_vic addMagazineTurret ["2Rnd_MK82", [-1]];
+_vic2 attachTo [_vic, [0, -25, 3]]; 
+_vic2 setDir 180;
+
+
+_vic = "usaf_kc135" createVehicle(position player); 
+_vic2 = "Submarine_01_F" createVehicle(position player);
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [-1]];
+_vic addWeaponTurret ["autocannon_35mm", [-1]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+_vic addMagazineTurret ["12Rnd_120mm_HEAT_MP", [-1]];
+_vic addWeaponTurret ["cannon_120mm_long", [-1]];
+_vic2 attachTo [_vic, [0, -25, 3]]; 
+_vic2 setDir 180;
+
+_vic = "USAF_AC130U" createVehicle(position player); 
+_vic2 = "Submarine_01_F" createVehicle(position player);
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [-1]];
+_vic addWeaponTurret ["autocannon_35mm", [-1]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+_vic addMagazineTurret ["12Rnd_120mm_HEAT_MP", [-1]];
+_vic addWeaponTurret ["cannon_120mm_long", [-1]];
+_vic2 attachTo [_vic, [0, -25, 3]]; 
+_vic2 setDir 180;
+
+_vic = "USAF_F22_Heavy" createVehicle(position player); 
+_vic2 = "Submarine_01_F" createVehicle(position player);
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [-1]];
+_vic addWeaponTurret ["autocannon_35mm", [-1]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+_vic addMagazineTurret ["12Rnd_120mm_HEAT_MP", [-1]];
+_vic addWeaponTurret ["cannon_120mm_long", [-1]];
+_vic2 attachTo [_vic, [0, -25, 3]]; 
+_vic2 setDir 180;
+
+
+
+Mamoth
+
+_vic = "HTNK_Gdi" createVehicle(position player);
+
+_vic = "FIR_F35B_Standard" createVehicle(position player);
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic2 = "Submarine_01_F" createVehicle(position player); 
+_vic2 attachTo [_vic, [0, 0, 0]]; 
+_vic2 setDir 180;
+
+
+_vic = "FIR_F23A" createVehicle(position player);
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+FIR_F23A setVehicleAmmo 1;
+_vic allowDamage false;
+
+
+
+
+_vic = "rhsusf_m1025_d_m2" createVehicle(position player);
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [0]];
+_vic addWeaponTurret ["autocannon_35mm", [0]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F", [0]];
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F", [0]];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F",[0]];
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F",[0]];
+_vic addWeaponTurret ["Twin_Cannon_20mm",[0]];
+_vic addMagazineTurret ["2000Rnd_20mm_shells",[0]];
+
+
+this addMagazineTurret ["680Rnd_35mm_AA_shells", [0]];
+this addWeaponTurret ["autocannon_35mm", [0]]; 
+this addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+this addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F", [0]];
+this addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F", [0]];
+this addWeaponTurret ["MK82BombLauncher", [0]];
+this addMagazineTurret ["2Rnd_MK82", [0]];
+this addWeaponTurret ["rockets_230mm_GAT", [-1]];
+this addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+this addWeaponTurret ["GBU12BombLauncher",[0]];
+this addMagazineTurret ["2Rnd_GBU12_LGB",[0]];
+this addMagazineTurret ["2Rnd_GBU12_LGB_MI10",[0]];
+this addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F",[0]];
+this addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F",[0]];
+this addWeaponTurret ["Twin_Cannon_20mm",[0]];
+this addMagazineTurret ["2000Rnd_20mm_shells",[0]];
+
+
+_vic = "USAF_C130J" createVehicle(position player);
+_vic2 = "Submarine_01_F" createVehicle(position player);
+_vic2 attachTo [_vic, [0, -25, 3]]; 
+_vic2 setDir 180;
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [0]];
+_vic addWeaponTurret ["autocannon_35mm", [0]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F", [0]];
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F", [0]];
+_vic addWeaponTurret ["MK82BombLauncher", [0]];
+_vic addMagazineTurret ["2Rnd_MK82", [0]];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+_vic addWeaponTurret ["GBU12BombLauncher",[0]];
+_vic addMagazineTurret ["2Rnd_GBU12_LGB",[0]];
+_vic addMagazineTurret ["2Rnd_GBU12_LGB_MI10",[0]];
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F",[0]];
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F",[0]];
+_vic addWeaponTurret ["Twin_Cannon_20mm",[0]];
+_vic addMagazineTurret ["2000Rnd_20mm_shells",[0]];
+vehicle player allowDamage false;
+
+
+_vic = "FIR_F14D" createVehicle(position player);
+_vic2 = "Submarine_01_F" createVehicle(position player);
+_vic2 attachTo [_vic, [0, -25, 3]]; 
+_vic2 setDir 180;
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [0]];
+_vic addWeaponTurret ["autocannon_35mm", [0]]; 
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}];
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F", [0]];
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F", [0]];
+_vic addWeaponTurret ["MK82BombLauncher", [0]];
+_vic addMagazineTurret ["2Rnd_MK82", [0]];
+_vic addWeaponTurret ["rockets_230mm_GAT", [-1]];
+_vic addMagazineTurret ["12Rnd_230mm_rockets", [-1]];
+_vic addWeaponTurret ["GBU12BombLauncher",[0]];
+_vic addMagazineTurret ["2Rnd_GBU12_LGB",[0]];
+_vic addMagazineTurret ["2Rnd_GBU12_LGB_MI10",[0]];
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F",[0]];
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F",[0]];
+_vic addWeaponTurret ["Twin_Cannon_20mm",[0]];
+_vic addMagazineTurret ["2000Rnd_20mm_shells",[0]];
+_vic allowDamage false;
+
+
+USAF_C130J
+RHS_UH60M2_d
+RHS_MELB_AH6M
+_vic = "USAF_C130J" createVehicle(position player);
+_vic2 = "Submarine_01_F" createVehicle(position player);
+_vic2 attachTo [_vic, [0, -25, 3]]; 
+_vic2 setDir 180;
+_vic addMagazineTurret ["680Rnd_35mm_AA_shells", [-1]]; 
+_vic addWeaponTurret ["autocannon_35mm", [-1]];  
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}]; 
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F", [-1]]; 
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F", [-1]]; 
+_vic addWeaponTurret ["MK82BombLauncher", [-1]]; 
+_vic addMagazineTurret ["2Rnd_MK82", [-1]];  
+_vic addWeaponTurret ["GBU12BombLauncher",[-1]]; 
+_vic addMagazineTurret ["2Rnd_GBU12_LGB",[-1]]; 
+_vic addMagazineTurret ["2Rnd_GBU12_LGB_MI10",[-1]]; 
+_vic addWeaponTurret ["Gatling_30mm_Plane_CAS_01_F",[-1]]; 
+_vic addMagazineTurret ["1000Rnd_Gatling_30mm_Plane_CAS_01_F",[-1]]; 
+_vic addWeaponTurret ["Twin_Cannon_20mm",[-1]]; 
+_vic addMagazineTurret ["2000Rnd_20mm_shells",[-1]];
+_vic addWeaponTurret ["Laserdesignator_pilotCamera",[0]];
+_vic addMagazineTurret ["Laserbatteries",[0]];
+_vic allowDamage false;
+
+
+_vic = "RHS_UH60M2_d" createVehicle(position player);
+_vic addWeaponTurret ["Twin_Cannon_20mm",[-1]]; 
+_vic addMagazineTurret ["2000Rnd_20mm_shells",[-1]];
+_vic addEventHandler ["Fired",{(_this select 0) setVehicleAmmo 1}]; 
