@@ -1,12 +1,12 @@
-# RCON into the server with docker
-# docker exec -i container-name rcon-cli
-# RCON must be enabled in the server
-docker exec -i minecraft-mc-1 rcon-cli
+## RCON into the server with docker
+-  docker exec -i container-name rcon-cli
+-  RCON must be enabled in the server
+-  docker exec -i minecraft-mc-1 rcon-cli
 
-# Restart server with warning
+## Restart server with warning
 
 
-# Whitelist player
+## Whitelist player
 #Java
 whitelist add username
 
