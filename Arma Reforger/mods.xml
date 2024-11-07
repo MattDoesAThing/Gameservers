@@ -4,9 +4,9 @@
 		"version": "0.9.3399"
 	},
 	{
-		"modId": "5E990AC4614243FF",
-		"name": "ConflictPVERemixedVanilla",
-		"version": "1.2.1"
+		"modId": "61B514B96692C049",
+		"name": "ConflictPVERemixedVanilla2.0",
+		"version": "2.2.6"
 	},
 	{
 		"modId": "5E389BB9F58B79A6",
@@ -44,15 +44,14 @@
 		"version": "1.1.2"
 	},
 	{
-		"modId": "60FE751267F03779",
-		"name": "ConflictPVERHS",
-		"version": "0.0.18"
-	},
-	{
 		"modId": "5C721177A220B42F",
 		"name": "Joint Light Tactical Vehicle",
 		"version": "1.2.2"
 	},
+	{
+	        "modId":"60612C225328522E",
+                "name":"No Weapon Drop Unconscious"
+	}
 	{
 		"modId": "5CAB06A845A6DC18",
 		"name": "Units Map Markers",
