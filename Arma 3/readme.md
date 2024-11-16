@@ -1,6 +1,8 @@
 ### Base mod file that I use
 - [Base Mods](https://github.com/MattDoesAThing/Gameservers/blob/main/Arma%203/Base%20Mod%20list.html)
 
+### Server Side Mods that I use
+- [Server side](https://github.com/MattDoesAThing/Gameservers/blob/main/Arma%203/Server%20Side%20Mod%20List.html)
 
 ### Fun scripts that do various things...
 - [Fun ideas](https://github.com/MattDoesAThing/Gameservers/blob/main/Arma%203/My%20fun%20stuff)
