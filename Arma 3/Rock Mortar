@@ -1,0 +1,23 @@
+Such a stupid little script but genuinely made me laugh.  Here it is if anyone else wants to try it just copypaste it to mortar init in editor: 
+
+    this addEventHandler ["Fired", {
+        params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
+    
+        _rock = createVehicle ["Land_SharpRock_monolith", getPosASL _projectile, [], 0, "CAN_COLLIDE"];
+        _rock attachTo [_projectile, [0,0,0]];
+        _rock setVectorDirAndUp [[0,0,1],[0,1,0]];
+        _rock setMass 0.1;
+    
+        _rock addEventHandler ["Explosion", {
+            params ["_rock", "_damage"];
+    
+            {
+                if ((player distance _x) < 100) then {
+                    [ _x, "addCamShake", [5, 2, 25] ] remoteExecCall ["call", _x];
+                };
+            } forEach allPlayers;
+    
+            _pos = getPos _rock;
+            _dust = ["BIS_fnc_effectDust", _pos, 10, 1.5] call BIS_fnc_effectDust;
+        }];
+    }];
